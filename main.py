@@ -16,10 +16,10 @@ class Dir_Data(BaseModel):
 async def get_dir_data(name_dir: str):
     dir_data = Dir_Data
     if name_dir in os.listdir():
-        all = []
+        all_data = []
         for root, dirs, files in os.walk('src'):
-            all.extend(files)
-            all.extend(dirs)
+            all_data.extend(files)
+            all_data.extend(dirs)
     else:
         raise status.HTTP_404_NOT_FOUND
 
