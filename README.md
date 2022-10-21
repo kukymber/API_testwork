@@ -10,8 +10,9 @@ GET /api/meta
 #Использование Docker, сервис должен запускаться с помощью docker-compose up.
 
 
-Used in the project 
+##Used in the project 
 FastAPI framework, OS package
+
 
 ---
 #This simple model "get FastAPI" .
