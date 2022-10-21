@@ -1,6 +1,6 @@
 #API_testwork
-#The project was completed according to the requirements below.
-
+The project was completed according to the requirements below.
+---
 Требования и задачи
 Используя один из framework (Flask, Django, FastApi) создать микросвервис:
 Задача сервиса - на запрос   
@@ -10,7 +10,7 @@ GET /api/meta
 
 
 #Used in the project FastAPI framework, OS package
-
+---
 
 
 This simple model "get FastAPI" .
