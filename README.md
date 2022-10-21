@@ -9,11 +9,11 @@ GET /api/meta
 #Использование Docker, сервис должен запускаться с помощью docker-compose up.
 
 
-#Used in the project FastAPI framework, OS package
+#Used in the project 
+FastAPI framework, OS package
+
 ---
-
-
-This simple model "get FastAPI" .
+#This simple model "get FastAPI" .
 To display information, I took a list of all files and folders "os.listdir" (without an argument, displays both). 
 Then, using the generator, I fill the dictionary along with the necessary data.
 If there is no such directory, then i raise an error.
