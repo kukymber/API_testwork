@@ -1,27 +1,19 @@
-from fastapi import FastAPI, status, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI, HTTPException
 
 import os
 
 app = FastAPI()
 
 
-class Dir_Data(BaseModel):
-    name: str
-    type: str
-    time: int
-
-
-@app.get("/api/{name_dir}", response_model=Dir_Data)
-async def get_dir_data(name_dir: str):
-    dir_data = Dir_Data
+@app.get("/api/{name_dir}")
+async def get_dir_data(name_dir):
     if name_dir in os.listdir():
-        all_data = []
-        for root, dirs, files in os.walk('src'):
-            all_data.extend(files)
-            all_data.extend(dirs)
+        all_dir = os.listdir(name_dir)
+        options_of_dir = {}
+        for i in range(len(all_dir)):
+            options_of_dir[i] = f'name:{all_dir[i]}, ' \
+                                f'type:{("file" if os.path.isfile(name_dir + "/" + all_dir[i]) else "folder")}, ' \
+                                f'time:{os.stat(name_dir + "/" + all_dir[i]).st_ctime} '
+        return options_of_dir
     else:
         raise HTTPException(status_code=404, detail='Wrong Data')
-
-
-    return dir_data
