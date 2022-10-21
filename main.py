@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
 
 import os
@@ -21,7 +21,7 @@ async def get_dir_data(name_dir: str):
             all_data.extend(files)
             all_data.extend(dirs)
     else:
-        raise status.HTTP_404_NOT_FOUND
+        raise HTTPException(status_code=404, detail='Wrong Data')
 
 
     return dir_data
