@@ -12,7 +12,7 @@ GET /api/meta
 
 
 ## Used in the project 
-FastAPI framework, OS package
+FastAPI framework, OS package, Docker, docker-compose
 
 ---
 
